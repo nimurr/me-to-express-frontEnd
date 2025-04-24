@@ -4,7 +4,7 @@ import React from 'react';
 
 const Page = () => {
     return (
-        <div className="mt-[82px]">
+        <div >
             <Hero />
         </div>
     );

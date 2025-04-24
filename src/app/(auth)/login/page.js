@@ -12,18 +12,18 @@ const Page = () => {
     };
 
     return (
-        <div className='h-screen bg-gradient-to-b from-[#f9f5ff] to-[#b6a7ca]'>
-             <Link href="/">
-                <img className='md:pl-10 pt-10  md:w-60 w-48 mx-auto md:ml-0' src="/Images/Auth/logo2.png" alt="" />
+        <div className='h-screen bg-gradient-to-b from-[#f9f5ff] to-[#e585ac]'>
+            <Link href="/">
+                <img className='md:pl-10 pt-10  w-48 mx-auto md:ml-0' src="/Images/Auth/logo.png" alt="" />
             </Link>
             <div className='flex justify-center mt-20'>
-                <div className='min-w-80'>
-                    <h2 className='text-3xl font-medium text-center'>Login</h2>
+                <div className='min-w-96'>
+                    <h2 className='text-3xl font-semibold text-primary text-center'>Login</h2>
                     <div className='mt-5'>
                         <label className='font-semibold' htmlFor="email">Email</label>
                         <input
                             placeholder='Enter your email'
-                            className='mt-2 w-full p-2 border border-green-400 rounded-md focus:outline-0 ring-0 bg-white'
+                            className='mt-2 w-full p-2 border border-primary rounded-md focus:outline-0 ring-0 bg-white'
                             type="email"
                             name="email"
                             id="email"
@@ -34,7 +34,7 @@ const Page = () => {
                         <div className='relative'>
                             <input
                                 placeholder='Enter your password'
-                                className='mt-2 w-full p-2 border border-green-400 rounded-md focus:outline-0 ring-0 bg-white'
+                                className='mt-2 w-full p-2 border border-primary rounded-md focus:outline-0 ring-0 bg-white'
                                 type={showPassword ? "text" : "password"} // Toggle password visibility
                                 name="password"
                                 id="password"
@@ -50,16 +50,16 @@ const Page = () => {
                         </div>
                     </div>
                     <div className='flex justify-between items-center my-5'>
-                        <label className='' htmlFor="remember">
+                        <label className='flex items-center' htmlFor="remember">
                             <input className='' type="checkbox" name="remember" id="remember" />
-                            <span className='ml-2 text-gray-600'>Remember me</span>
+                            <span className='ml-2 text-gray-600 text-sm'>Remember me</span>
                         </label>
-                        <Link className='text-blue-600 text-sm' href="/forgot-password">Forgot Password</Link>
+                        <Link className='text-secondary font-semibold text-sm' href="/forgot-password">Forgot Password</Link>
                     </div>
                     <div className='mt-5'>
-                        <button className='cursor-pointer w-full p-2 bg-green-400 font-semibold text-white rounded-md'>Login</button>
+                        <button className='cursor-pointer w-full p-2 bg-primary font-semibold text-white rounded-md'>Login</button>
                     </div>
-                    <p className='text-center mt-5 text-gray-600'>Don't have an account? <Link className='text-blue-600' href="/signup-step" >Sign Up</Link></p>
+                    <p className='text-center mt-5 text-gray-600'>Don't have an account? <Link className='text-secondary font-semibold' href="/signup-step" >Sign Up</Link></p>
                 </div>
             </div>
         </div>

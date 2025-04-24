@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import { CiLock } from "react-icons/ci";
+import Link from 'next/link';
 
 
 const Header = () => {
@@ -64,7 +65,7 @@ const Header = () => {
                                         {item.name} <FiChevronDown className="mt-0.5" />
                                     </button>
                                     {showOthersDropdown && (
-                                        <div className="absolute left-0 mt-7 w-40 bg-white border rounded shadow-md py-1 z-10">
+                                        <div className="absolute left-0 mt-8 w-40 bg-white border rounded shadow-md py-1 z-10">
                                             {item.dropdown.map((subItem, i) => (
                                                 <a
                                                     key={i}
@@ -92,9 +93,9 @@ const Header = () => {
 
                     {/* Desktop Login */}
                     <div className="hidden md:block">
-                        <button className="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded hover:bg-secondary hover:text-white transition">
+                        <Link href="/login" className="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded hover:bg-secondary hover:text-white transition">
                             <CiLock className='text-xl' /> Login / Register
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Toggle */}
@@ -152,9 +153,9 @@ const Header = () => {
                                 </a>
                             )
                         )}
-                        <button className="mt-2 flex items-center justify-center gap-2 px-4 py-2 border border-primary text-primary rounded hover:bg-primary hover:text-white transition">
+                        <Link href="/login" className="mt-2 flex items-center justify-center gap-2 px-4 py-2 border border-primary text-primary rounded hover:bg-primary hover:text-white transition">
                             <CiLock className='text-xl' /> Login / Register
-                        </button>
+                        </Link>
                     </nav>
                 </div>
             )}

@@ -12,18 +12,18 @@ const Page = () => {
     };
 
     return (
-        <div className='h-screen bg-gradient-to-b from-[#f9f5ff] to-[#b6a7ca]'>
+        <div className='h-screen bg-gradient-to-b from-[#f9f5ff] to-[#e585ac]'>
             <Link href="/">
-                <img className='md:pl-10 pt-10  md:w-60 w-48 mx-auto md:ml-0' src="/Images/Auth/logo2.png" alt="" />
+                <img className='md:pl-10 pt-10  w-48 mx-auto md:ml-0' src="/Images/Auth/logo.png" alt="" />
             </Link>
             <div className='flex justify-center mt-20'>
-                <div className='min-w-80'>
-                    <h2 className='text-3xl font-medium text-center'>Sign Up</h2>
+                <div className='min-w-96'>
+                    <h2 className='text-3xl font-semibold text-center text-primary'>Sign Up</h2>
                     <div className='mt-5'>
                         <label className='font-semibold' htmlFor="name">Full Name</label>
                         <input
                             placeholder='Enter your name'
-                            className='mt-2 w-full p-2 border border-green-400 rounded-md focus:outline-0 ring-0 bg-white'
+                            className='mt-2 w-full p-2 border border-primary rounded-md focus:outline-0 ring-0 bg-white'
                             type="text"
                             name="name"
                             id="name"
@@ -33,7 +33,7 @@ const Page = () => {
                         <label className='font-semibold' htmlFor="email">Email</label>
                         <input
                             placeholder='Enter your email'
-                            className='mt-2 w-full p-2 border border-green-400 rounded-md focus:outline-0 ring-0 bg-white'
+                            className='mt-2 w-full p-2 border border-primary rounded-md focus:outline-0 ring-0 bg-white'
                             type="email"
                             name="email"
                             id="email"
@@ -44,7 +44,7 @@ const Page = () => {
                         <div className='relative'>
                             <input
                                 placeholder='Enter your password'
-                                className='mt-2 w-full p-2 border border-green-400 rounded-md focus:outline-0 ring-0 bg-white'
+                                className='mt-2 w-full p-2 border border-primary rounded-md focus:outline-0 ring-0 bg-white'
                                 type={showPassword ? "text" : "password"} // Toggle password visibility
                                 name="password"
                                 id="password"
@@ -66,9 +66,9 @@ const Page = () => {
                         </label>
                     </div>
                     <div className='mt-5'>
-                        <button className='cursor-pointer w-full p-2 bg-green-400 font-semibold text-white rounded-md'>Sign In</button>
+                        <button className='cursor-pointer w-full p-2 bg-primary font-semibold text-white rounded-md'>Sign In</button>
                     </div>
-                    <p className='text-center mt-5 text-gray-600'>Already have an account? <Link className='text-blue-600' href="/login" >Login</Link></p>
+                    <p className='text-center mt-5 text-gray-600'>Already have an account? <Link className='text-primary' href="/login" >Login</Link></p>
                 </div>
             </div>
         </div>

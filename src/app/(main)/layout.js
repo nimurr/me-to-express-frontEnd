@@ -24,7 +24,9 @@ export default function Layout({ children }) {
     return (
         <div>
             <Header />
-            {children}
+            <div className="mt-[82px]">
+                {children}
+            </div>
             <Footer />
         </div>
     );
