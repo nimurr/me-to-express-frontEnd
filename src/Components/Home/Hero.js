@@ -9,9 +9,12 @@ const Hero = () => {
             <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
 
             {/* Content Container */}
-            <div className="relative z-10 rounded-2xl max-w-5xl w-full mx-4 shadow-[0_0_10px_0_rgba(0,0,0,0.5)]">
-                <div className="grid backdrop-blur-md p-8 rounded-2xl bg-primary grid-cols-1 md:grid-cols-4 gap-4 items-end">
-
+            <div className="relative z-10 rounded-2xl max-w-5xl w-full mx-4 ">
+                <div>
+                    <h1 className="text-2xl md:text-6xl font-bold text-white text-center sm:mb-4 mb-2">One Platform for Every Solution.</h1>
+                    <p className='text-white text-center sm:text-base text-sm'>Discover your dream university and start your educational journey with us.</p>
+                </div>
+                <div className="grid mt-5 shadow-[0_0_10px_0_rgba(0,0,0,0.5)] backdrop-blur-md p-8 rounded-2xl bg-primary grid-cols-1 md:grid-cols-4 gap-4 items-end">
                     {/* Department Select */}
                     <div className="flex flex-col gap-2">
                         <label className="text-white font-medium text-sm md:text-base">Department</label>
