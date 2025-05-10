@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import { CiLock } from "react-icons/ci";
 import Link from 'next/link';
-
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,9 +11,12 @@ const Header = () => {
     const [showMobileOthers, setShowMobileOthers] = useState(false);
     const dropdownRef = useRef(null);
 
+    const router = useRouter(); // Hook to access the current route
+
+
     const navItems = [
-        { name: 'Home', href: '#' },
-        { name: 'Consultants', href: '#' },
+        { name: 'Home', href: '/' },
+        { name: 'Consultants', href: '/consultants' },
         { name: 'Services', href: '#' },
         { name: 'Reviews', href: '#' },
         {
@@ -22,6 +25,7 @@ const Header = () => {
                 { name: 'Countries', href: '#' },
                 { name: 'Blog', href: '#' },
                 { name: 'About Us', href: '#' },
+                { name: 'Contact Us', href: '#' },
             ],
         },
     ];
@@ -43,8 +47,13 @@ const Header = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
+    // Function to determine if the link is active
+    const isActive = (href) => router.pathname === href;
+
+    console.log(router);
+
     return (
-        <header className="bg-white border-b border-secondary fixed top-0 left-0 w-full z-50">
+        <header className="bg-[#ffffff9c] backdrop-blur-lg border-b border-secondary fixed top-0 left-0 w-full z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center py-5">
                     <div className="text-xl font-bold text-secondary">
@@ -71,7 +80,7 @@ const Header = () => {
                                                     key={i}
                                                     href={subItem.href}
                                                     onClick={closeDropdowns}
-                                                    className="block px-4 py-2 text-sm hover:bg-gray-100 text-gray-700"
+                                                    className={`block px-4 py-2 text-sm hover:bg-gray-100 text-gray-700 ${isActive(subItem.href) ? 'text-primary' : ''}`}
                                                 >
                                                     {subItem.name}
                                                 </a>
@@ -80,20 +89,20 @@ const Header = () => {
                                     )}
                                 </div>
                             ) : (
-                                <a
+                                <Link
                                     key={index}
                                     href={item.href}
-                                    className="hover:text-secondary text-sm transition"
+                                    className={`hover:text-secondary text-sm transition ${isActive(item.href) ? 'text-primary' : ''}`}
                                 >
                                     {item.name}
-                                </a>
+                                </Link>
                             )
                         )}
                     </nav>
 
                     {/* Desktop Login */}
                     <div className="hidden md:block">
-                        <Link href="/login" className="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded hover:bg-secondary hover:text-white transition">
+                        <Link href="/login" className="flex font-semibold items-center gap-2 px-4 py-2 border border-primary text-primary rounded hover:bg-secondary hover:text-white transition">
                             <CiLock className='text-xl' /> Login / Register
                         </Link>
                     </div>
@@ -120,8 +129,7 @@ const Header = () => {
                                     >
                                         {item.name}
                                         <FiChevronDown
-                                            className={`transform transition duration-200 ${showMobileOthers ? 'rotate-180' : ''
-                                                }`}
+                                            className={`transform transition duration-200 ${showMobileOthers ? 'rotate-180' : ''}`}
                                         />
                                     </button>
                                     {showMobileOthers && (
@@ -134,7 +142,7 @@ const Header = () => {
                                                         closeDropdowns();
                                                         setIsOpen(false);
                                                     }}
-                                                    className="block text-sm text-gray-600 hover:text-secondary"
+                                                    className={`block text-sm text-gray-600 hover:text-secondary ${isActive(subItem.href) ? 'text-primary' : ''}`}
                                                 >
                                                     {subItem.name}
                                                 </a>
@@ -143,18 +151,18 @@ const Header = () => {
                                     )}
                                 </div>
                             ) : (
-                                <a
+                                <Link
                                     key={index}
                                     href={item.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="hover:text-secondary text-sm transition"
+                                    className={`hover:text-secondary text-sm transition ${isActive(item.href) ? 'text-primary' : ''}`}
                                 >
                                     {item.name}
-                                </a>
+                                </Link>
                             )
                         )}
-                        <Link href="/login" className="mt-2 flex items-center justify-center gap-2 px-4 py-2 border border-primary text-primary rounded hover:bg-primary hover:text-white transition">
-                            <CiLock className='text-xl' /> Login / Register
+                        <Link href="/login" className="mt-2 font-semibold flex items-center justify-center gap-2 px-4 py-2 border border-primary text-primary rounded hover:bg-primary hover:text-white transition">
+                            <CiLock className='text-xl ' /> Login / Register
                         </Link>
                     </nav>
                 </div>
