@@ -17,19 +17,19 @@ const Hero = () => {
                 <div className="grid mt-5 shadow-[0_0_10px_0_rgba(0,0,0,0.5)] backdrop-blur-md p-8 rounded-2xl bg-primary grid-cols-1 md:grid-cols-4 gap-4 items-end">
                     {/* Department Select */}
                     <div className="flex flex-col gap-2">
-                        <label className="text-white font-medium text-sm md:text-base">Department</label>
+                        <label className="text-white font-medium text-sm md:text-base">Degree</label>
                         <select className="p-3 rounded-xl bg-white text-gray-700 shadow-md focus:outline-none focus:ring-2 focus:ring-primary">
-                            <option>Choose Department</option>
-                            <option>Engineering</option>
-                            <option>Business</option>
-                            <option>Medicine</option>
-                            <option>Law</option>
+                            <option>BSc</option>
+                            <option>BA</option>
+                            <option>MSC</option>
+                            <option>MBA</option>
+                            <option>PhD</option>
                         </select>
                     </div>
 
                     {/* Major Select */}
                     <div className="flex flex-col gap-2">
-                        <label className="text-white font-medium text-sm md:text-base">Major</label>
+                        <label className="text-white font-medium text-sm md:text-base">Depertment</label>
                         <select className="p-3 rounded-xl bg-white text-gray-700 shadow-md focus:outline-none focus:ring-2 focus:ring-primary">
                             <option>Choose Major</option>
                             <option>Computer Science</option>
@@ -52,7 +52,7 @@ const Hero = () => {
                     </div>
 
                     {/* Search Button */}
-                    <button className="bg-secondary text-white font-semibold px-6 py-3 rounded-xl hover:bg-secondary transition-all duration-300 w-full mt-2 md:mt-6 space-x-2">
+                    <button className="bg-secondary shadow-[0_0_10px_0_rgba(0,0,0,0.2)] text-white font-semibold px-6 py-3 rounded-xl hover:bg-secondary transition-all duration-300 w-full mt-2 md:mt-6 space-x-2">
                         <span>Search</span>
                         <CiSearch className='inline-block mr-2  text-xl' />
                     </button>
